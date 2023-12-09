@@ -7,60 +7,11 @@
     "text": "Introdução"
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "3  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever."
-  },
-  {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
-  },
-  {
-    "objectID": "index.html#divisões-do-material",
-    "href": "index.html#divisões-do-material",
+    "objectID": "index.html#estudos-em-python",
+    "href": "index.html#estudos-em-python",
     "title": "Estudos em Python",
-    "section": "Divisões do material",
-    "text": "Divisões do material\n\nPython\nQuarto\n\nCriando um book\n\nPandas\nGeopandas\nLeflet"
-  },
-  {
-    "objectID": "2p_1c_create_book.html#via-terminal",
-    "href": "2p_1c_create_book.html#via-terminal",
-    "title": "2  Criando um livro com o Quarto",
-    "section": "2.1 Via Terminal",
-    "text": "2.1 Via Terminal\nÉ possível criar a estrutura básica do livro através do terminal com o cmando abaixo.\nquarto create projec book meu_livro"
-  },
-  {
-    "objectID": "2p_1c_create_book.html#visualizando-o-livro-criado",
-    "href": "2p_1c_create_book.html#visualizando-o-livro-criado",
-    "title": "3  Criando um livro com o Quarto",
-    "section": "3.2 Visualizando o livro criado",
-    "text": "3.2 Visualizando o livro criado"
-  },
-  {
-    "objectID": "2p_1c_create_book.html#visualizando-o-livro-criando",
-    "href": "2p_1c_create_book.html#visualizando-o-livro-criando",
-    "title": "3  Criando um livro com o Quarto",
-    "section": "3.2 Visualizando o livro Criando",
-    "text": "3.2 Visualizando o livro Criando\nO comando abaixo cria uma prévisualização do livro e abre em um navegador.\nquarto preview meu_livro\n\n3.2.1 Argumentos\nquarto preview meu_livro.qmd --no-browser --no-watch-inputs\n\n–no-browser - não abre o navegador de forma automática\n–no-watch-inputs - desativa o recarregamento automático, essa opção é melhor quando o projeto já encontra-se em um certo tamanho que a atualização a cada modificação diminui a produtividade;"
-  },
-  {
-    "objectID": "2p_1c_create_book.html#visualizando-o-livro.",
-    "href": "2p_1c_create_book.html#visualizando-o-livro.",
-    "title": "2  Criando um livro com o Quarto",
-    "section": "2.2 Visualizando o livro.",
-    "text": "2.2 Visualizando o livro.\nO comando abaixo cria uma prévisualização do livro e abre em um navegador.\nquarto preview meu_livro\n\n2.2.1 Argumentos\nquarto preview meu_livro.qmd --no-browser --no-watch-inputs\n\n–no-browser - não abre o navegador de forma automática\n–no-watch-inputs - desativa o recarregamento automático, essa opção é melhor quando o projeto já encontra-se em um certo tamanho que a atualização a cada modificação diminui a produtividade;"
+    "section": "Estudos em Python",
+    "text": "Estudos em Python\nCódigos e procedimentos em python usados no meu trabalho.\nVisando organizar meu códigos e procedimentos que estudo e uso no meu dia-a-dia, vou catalogar meu caderno de estudo de python nas áreas que atuo seguindo um estilo “como faz”, ou seja, tópicos objetivos e práticos de como realizar alguma tarefa que me deparei usando python. Esse material será elaborado usando o framework Quarto no formato book.\n\nDivisões do material\n\nPython\nQuarto\n\nCriando um book\n\nPandas\nGeopandas\nLeflet"
   },
   {
     "objectID": "2p_quarto.html",
@@ -70,6 +21,20 @@
     "text": "A documentação completa pode ser acessada em: Quarto\n\nUm sistema de publicação científica e técnica de código aberto Crie usando notebooks Jupyter ou com marcação de texto simples em seu editor favorito. Crie conteúdo dinâmico com Python , R , Julia e Observable . Publique artigos, apresentações, painéis, sites, blogs e livros reproduzíveis e com qualidade de produção em HTML, PDF, MS Word, ePub e muito mais. Compartilhe conhecimento e insights em toda a organização publicando no Posit Connect , no Confluence ou em outros sistemas de publicação. Escreva usando marcação Pandoc , incluindo equações, citações, referências cruzadas, painéis de figuras, textos explicativos, layout avançado e muito mais."
   },
   {
+    "objectID": "2p_1c_create_book.html#via-terminal",
+    "href": "2p_1c_create_book.html#via-terminal",
+    "title": "2  Criando um livro com o Quarto",
+    "section": "2.1 Via Terminal",
+    "text": "2.1 Via Terminal\nÉ possível criar a estrutura básica do livro através do terminal com o cmando abaixo.\nquarto create projec book meu_livro"
+  },
+  {
+    "objectID": "2p_1c_create_book.html#visualizando-o-livro.",
+    "href": "2p_1c_create_book.html#visualizando-o-livro.",
+    "title": "2  Criando um livro com o Quarto",
+    "section": "2.2 Visualizando o livro.",
+    "text": "2.2 Visualizando o livro.\nO comando abaixo cria uma prévisualização do livro e abre em um navegador.\nquarto preview meu_livro\n\n2.2.1 Argumentos\nquarto preview meu_livro.qmd --no-browser --no-watch-inputs\n\n–no-browser - não abre o navegador de forma automática\n–no-watch-inputs - desativa o recarregamento automático, essa opção é melhor quando o projeto já encontra-se em um certo tamanho que a atualização a cada modificação diminui a produtividade;"
+  },
+  {
     "objectID": "2p_1c_create_book.html#formatação",
     "href": "2p_1c_create_book.html#formatação",
     "title": "2  Criando um livro com o Quarto",
@@ -77,10 +42,10 @@
     "text": "2.3 Formatação\n\n2.3.1 Arquivo .yml\nEste arquivo gerencia as formatações gerais do projeto.\n\n2.3.1.1 Item project\nFormatações gerais do projeto tais como o tipo, nesse caso é book\nproject:\n  type: book\n\n\n2.3.1.2 Item Jupyter\nInforma qual o python a ser utilizado.\njupyter: python3\n\n\n2.3.1.3 Item book\nRepresenta a configuração do livro em si, suas partes e capítulos, autor, etc.\nbook:\n  title: \"Estudos em Python\"\n  author: \"Israel Ely\"\n  date: \"09/12/2023\"\n  cover-image: Geovalor_512_221px.png\n  chapters:\n    - index.qmd\n    - part: 1p_python.qmd\n      chapters: \n        - 1p_1c_funcoes.qmd\n    - part: 2p_quarto.qmd\n      chapters: \n        - 2p_1c_create_book.qmd\n    - summary.qmd\n    - references.qmd\n\n\n2.3.1.4 Item format\nSão formatações de tema e layout do projeto. Abaixo um exemplo de formatação para a saída de arquivos .html inclusive a vinculação de uma folha de estilo css própria (style.css).\nformat:\n  html:\n    theme: cosmo\n    default-image-extension: png\n    page-layout: full\n    css: styles.css\n    toc: false\n    fig-width: 9\n    fig-height: 6.5\n    fig-align: center\n\n\n\n2.3.2 Texto justificado\ncolocando o código abaixo no início da página faz com que os testos sejam justificados.\n&lt;div style=\"text-align: justify\"&gt;\n\n\n2.3.3 Criando um arquivo css próprio\nQuando inserimos no item format &gt; html a opção css: style.css, podemos inserir formatações extras e usálas no documento. Por exemplo, para alinhar as informações de uma tabela ao centro podemos usar:\n.table-center {\n    text-align: center;\n}\nO código abaixo cria uma tabela em Markdown.\ncol1|col2|col3\n----|----|----\nlin1|lin2|lin3\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\nlin1\nlin2\nlin3\n\n\n\nAgora a mesma tabela com a aplicação do código CSS.\n:::{.table-center}\ncol1|col2|col3\n----|----|----\nlin1|lin2|lin3\n:::\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\nlin1\nlin2\nlin3"
   },
   {
-    "objectID": "index.html#estudos-em-python",
-    "href": "index.html#estudos-em-python",
-    "title": "Estudos em Python",
-    "section": "Estudos em Python",
-    "text": "Estudos em Python\nCódigos e procedimentos em python usados no meu trabalho.\nVisando organizar meu códigos e procedimentos que estudo e uso no meu dia-a-dia, vou catalogar meu caderno de estudo de python nas áreas que atuo seguindo um estilo “como faz”, ou seja, tópicos objetivos e práticos de como realizar alguma tarefa que me deparei usando python. Esse material será elaborado usando o framework Quarto no formato book.\n\nDivisões do material\n\nPython\nQuarto\n\nCriando um book\n\nPandas\nGeopandas\nLeflet"
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "3  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
   }
 ]
