@@ -1,0 +1,133 @@
+# Criando um livro com o Quarto
+<div style="text-align: justify"> 
+## Via Terminal
+
+É possível criar a estrutura básica do livro através do terminal com o cmando abaixo.
+
+```bash 
+quarto create projec book meu_livro
+```
+
+## Visualizando o livro.
+
+O comando abaixo cria uma prévisualização do livro e abre em um navegador.
+
+```bash 
+quarto preview meu_livro
+```
+
+### Argumentos
+
+```bash 
+quarto preview meu_livro.qmd --no-browser --no-watch-inputs
+```
+
+> **--no-browser** - não abre o navegador de forma automática
+> 
+> **--no-watch-inputs** - desativa o recarregamento automático, essa opção é melhor quando o projeto já encontra-se em um certo tamanho que a atualização a cada modificação diminui a produtividade;
+>
+
+## Formatação
+
+### Arquivo .yml
+
+Este arquivo gerencia as formatações gerais do projeto.
+
+#### Item project
+
+Formatações gerais do projeto tais como o tipo, nesse caso é _book_
+
+```yml
+project:
+  type: book
+```
+#### Item Jupyter
+
+Informa qual o python a ser utilizado.
+
+```yml
+jupyter: python3
+```
+
+#### Item book
+
+Representa a configuração do livro em si, suas partes e capítulos, autor, etc. 
+
+```yml
+book:
+  title: "Estudos em Python"
+  author: "Israel Ely"
+  date: "09/12/2023"
+  cover-image: Geovalor_512_221px.png
+  chapters:
+    - index.qmd
+    - part: 1p_python.qmd
+      chapters: 
+        - 1p_1c_funcoes.qmd
+    - part: 2p_quarto.qmd
+      chapters: 
+        - 2p_1c_create_book.qmd
+    - summary.qmd
+    - references.qmd
+```
+#### Item format
+
+São formatações de tema e layout do projeto. Abaixo um exemplo de formatação para a saída de arquivos .html inclusive a vinculação de uma folha de estilo css própria (**style.css**).
+
+
+```yml
+format:
+  html:
+    theme: cosmo
+    default-image-extension: png
+    page-layout: full
+    css: styles.css
+    toc: false
+    fig-width: 9
+    fig-height: 6.5
+    fig-align: center
+```
+
+### Texto justificado
+
+colocando o código abaixo no início da página faz com que os testos sejam justificados.
+
+```css
+<div style="text-align: justify">
+```
+
+### Criando um arquivo css próprio
+
+Quando inserimos no item format > html a opção css: style.css, podemos inserir formatações extras e usálas no documento. Por exemplo, para alinhar as informações de uma tabela ao centro podemos usar:
+
+```css
+.table-center {
+    text-align: center;
+}
+```
+O código abaixo cria uma tabela em Markdown.
+
+```Markdown
+col1|col2|col3
+----|----|----
+lin1|lin2|lin3
+```
+
+col1|col2|col3
+----|----|----
+lin1|lin2|lin3
+
+Agora a mesma tabela com a aplicação do código CSS.
+```Quarto
+:::{.table-center}
+col1|col2|col3
+----|----|----
+lin1|lin2|lin3
+:::
+```
+
+:::{.table-center}
+col1|col2|col3
+----|----|----
+lin1|lin2|lin3
+:::

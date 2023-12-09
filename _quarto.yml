@@ -1,0 +1,50 @@
+project:
+  type: book
+
+jupyter: python3
+
+book:
+  title: "Estudos em Python"
+  author: "Israel Ely"
+  date: "09/12/2023"
+  cover-image: Geovalor_512_221px.png
+  chapters:
+    - index.qmd
+    - part: 1p_python.qmd
+      chapters: 
+        - 1p_1c_funcoes.qmd
+    - part: 2p_quarto.qmd
+      chapters: 
+        - 2p_1c_create_book.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+    default-image-extension: png
+    page-layout: full
+    css: styles.css
+    toc: false
+    fig-width: 9
+    fig-height: 6.5
+    fig-align: center
+
+  pdf:
+    documentclass: report
+    default-image-extension: tex
+    margin-left: 30mm
+    margin-right: 20mm
+    margin-top: 20mm
+    margin-bottom: 20mm
+    toc: true
+    number-sections: true
+    number-depth: 3
+
+lenguage:
+  leng: pt
+
+plugins:
+  - mkquartodocs
