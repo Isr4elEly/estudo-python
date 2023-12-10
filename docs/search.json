@@ -1,0 +1,107 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Estudos em Python",
+    "section": "",
+    "text": "Introdução"
+  },
+  {
+    "objectID": "index.html#estudos-em-python",
+    "href": "index.html#estudos-em-python",
+    "title": "Estudos em Python",
+    "section": "Estudos em Python",
+    "text": "Estudos em Python\nCódigos e procedimentos em python usados no meu trabalho.\nVisando organizar meu códigos e procedimentos que estudo e uso no meu dia-a-dia, vou catalogar meu caderno de estudo de python nas áreas que atuo seguindo um estilo “como faz”, ou seja, tópicos objetivos e práticos de como realizar alguma tarefa que me deparei usando python. Esse material será elaborado usando o framework Quarto no formato book.\n\nDivisões do material\n\nPython\nQuarto\n\nCriando um book\n\nPandas\nGeopandas\nLeflet"
+  },
+  {
+    "objectID": "2p_quarto.html",
+    "href": "2p_quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "A documentação completa pode ser acessada em: Quarto\n\nUm sistema de publicação científica e técnica de código aberto Crie usando notebooks Jupyter ou com marcação de texto simples em seu editor favorito. Crie conteúdo dinâmico com Python , R , Julia e Observable . Publique artigos, apresentações, painéis, sites, blogs e livros reproduzíveis e com qualidade de produção em HTML, PDF, MS Word, ePub e muito mais. Compartilhe conhecimento e insights em toda a organização publicando no Posit Connect , no Confluence ou em outros sistemas de publicação. Escreva usando marcação Pandoc , incluindo equações, citações, referências cruzadas, painéis de figuras, textos explicativos, layout avançado e muito mais."
+  },
+  {
+    "objectID": "2p_1c_create_book.html#via-terminal",
+    "href": "2p_1c_create_book.html#via-terminal",
+    "title": "2  Criando um livro com o Quarto",
+    "section": "2.1 Via Terminal",
+    "text": "2.1 Via Terminal\nÉ possível criar a estrutura básica do livro através do terminal com o cmando abaixo.\nquarto create projec book meu_livro"
+  },
+  {
+    "objectID": "2p_1c_create_book.html#visualizando-o-livro.",
+    "href": "2p_1c_create_book.html#visualizando-o-livro.",
+    "title": "2  Criando um livro com o Quarto",
+    "section": "2.2 Visualizando o livro.",
+    "text": "2.2 Visualizando o livro.\nO comando abaixo cria uma prévisualização do livro e abre em um navegador.\nquarto preview meu_livro\n\n2.2.1 Argumentos\nquarto preview meu_livro.qmd --no-browser --no-watch-inputs\n\n–no-browser - não abre o navegador de forma automática\n–no-watch-inputs - desativa o recarregamento automático, essa opção é melhor quando o projeto já encontra-se em um certo tamanho que a atualização a cada modificação diminui a produtividade;"
+  },
+  {
+    "objectID": "2p_1c_create_book.html#formatação",
+    "href": "2p_1c_create_book.html#formatação",
+    "title": "2  Criando um livro com o Quarto",
+    "section": "2.3 Formatação",
+    "text": "2.3 Formatação\n\n2.3.1 Arquivo .yml\nEste arquivo gerencia as formatações gerais do projeto.\n\n2.3.1.1 Item project\nFormatações gerais do projeto tais como o tipo, nesse caso é book\nproject:\n  type: book\n\n\n2.3.1.2 Item Jupyter\nInforma qual o python a ser utilizado.\njupyter: python3\n\n\n2.3.1.3 Item book\nRepresenta a configuração do livro em si, suas partes e capítulos, autor, etc.\nbook:\n  title: \"Estudos em Python\"\n  author: \"Israel Ely\"\n  date: \"09/12/2023\"\n  cover-image: Geovalor_512_221px.png\n  chapters:\n    - index.qmd\n    - part: 1p_python.qmd\n      chapters: \n        - 1p_1c_funcoes.qmd\n    - part: 2p_quarto.qmd\n      chapters: \n        - 2p_1c_create_book.qmd\n    - summary.qmd\n    - references.qmd\n\n\n2.3.1.4 Item format\nSão formatações de tema e layout do projeto. Abaixo um exemplo de formatação para a saída de arquivos .html inclusive a vinculação de uma folha de estilo css própria (style.css).\nformat:\n  html:\n    theme: cosmo\n    default-image-extension: png\n    page-layout: full\n    css: styles.css\n    toc: false\n    fig-width: 9\n    fig-height: 6.5\n    fig-align: center\n\n\n\n2.3.2 Texto justificado\ncolocando o código abaixo no início da página faz com que os testos sejam justificados.\n&lt;div style=\"text-align: justify\"&gt;\n\n\n2.3.3 Criando um arquivo css próprio\nQuando inserimos no item format &gt; html a opção css: style.css, podemos inserir formatações extras e usálas no documento. Por exemplo, para alinhar as informações de uma tabela ao centro podemos usar:\n.table-center {\n    text-align: center;\n}\nO código abaixo cria uma tabela em Markdown.\ncol1|col2|col3\n----|----|----\nlin1|lin2|lin3\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\nlin1\nlin2\nlin3\n\n\n\nAgora a mesma tabela com a aplicação do código CSS.\n:::{.table-center}\ncol1|col2|col3\n----|----|----\nlin1|lin2|lin3\n:::\n\n\n\n\ncol1\ncol2\ncol3\n\n\n\n\nlin1\nlin2\nlin3"
+  },
+  {
+    "objectID": "3p_geopandas.html#geopandas",
+    "href": "3p_geopandas.html#geopandas",
+    "title": "Geopandas",
+    "section": "GeoPandas",
+    "text": "GeoPandas\nGeoPandas é um projeto de código aberto para facilitar o trabalho com dados geoespaciais em python. GeoPandas estende os tipos de dados usados ​​pelos pandas para permitir operações espaciais em tipos geométricos. As operações geométricas são executadas por formas . Geopandas depende ainda de fiona para acesso a arquivos e matplotlib para plotagem."
+  },
+  {
+    "objectID": "3p_geopandas.html#descrição",
+    "href": "3p_geopandas.html#descrição",
+    "title": "Geopandas",
+    "section": "Descrição",
+    "text": "Descrição\nO objetivo do GeoPandas é facilitar o trabalho com dados geoespaciais em python. Ele combina os recursos de pandas e shapely, fornecendo operações geoespaciais em pandas e uma interface de alto nível para múltiplas geometrias. GeoPandas permite que você execute facilmente operações em python que, de outra forma, exigiriam um banco de dados espacial como PostGIS.\nOutras insformações em: Geopandas\nO geopandas contém várias funcionalidades do Pandas com a adição da coluna geometry que permite a utilização dos dados geográficos."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#carregando-geopackage",
+    "href": "3p_gpd_carregar_arquivos.html#carregando-geopackage",
+    "title": "3  Carregando arquivos",
+    "section": "3.1 Carregando GeoPackage",
+    "text": "3.1 Carregando GeoPackage\nFonte: fonte: Acervo Fundiário INCRA\nGeoPackage é um formato aberto, baseado em padrões, independente de plataforma, portátil, autodescritivo e compacto para transferência de informações geoespaciais.\ngpd.read_file('caminho-arquivo-gpkg', layer='nome-da-tabela')\n\n# Carregando os arquivos em GeoPackage\nassentamentos = gpd.read_file('./arquivos/dados.gpkg', layer='assentamentos_ba')\n\n# Exibindo os dados até a 5ª linha e da 10 coluna até a última\nassentamentos.iloc[:5,10:]\n\n\n\n\n\n\n\n\ndata_obten\narea_calc_\nsr\ndescricao_\ngeometry\n\n\n\n\n0\n06/12/2005\n2212.8004\nNone\nNone\nMULTIPOLYGON (((-38.65413 -10.24068, -38.65273...\n\n\n1\n26/10/2004\n318.7920\nNone\nNone\nMULTIPOLYGON (((-39.31049 -10.26928, -39.31015...\n\n\n2\n17/11/2004\n212.4702\nNone\nNone\nMULTIPOLYGON (((-39.70806 -10.69716, -39.70776...\n\n\n3\n22/07/2009\n1269.7391\nNone\nNone\nMULTIPOLYGON (((-40.83155 -13.63177, -40.82449...\n\n\n4\n16/12/2014\n3970.8382\nNone\nNone\nMULTIPOLYGON (((-39.56863 -17.14271, -39.56855..."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#carregando-shape",
+    "href": "3p_gpd_carregar_arquivos.html#carregando-shape",
+    "title": "3  Carregando arquivos",
+    "section": "3.2 Carregando Shape",
+    "text": "3.2 Carregando Shape\nfonte: ibge\ngpd.read_file('caminho-arquivo-shp')\n\n# Carregando os arquivos em shape\nuf = gpd.read_file('./arquivos/uf.shp')\n\n# Exibindo as 5 primeiras linhas e todas as colunas\nuf.head()\n\n\n\n\n\n\n\n\nCD_UF\nNM_UF\nSIGLA\nNM_REGIAO\namaz_legal\ngeometry\n\n\n\n\n0\n11\nRondônia\nRO\nNorte\n1\nPOLYGON ((-62.86662 -7.97587, -62.86017 -7.982...\n\n\n1\n12\nAcre\nAC\nNorte\n1\nPOLYGON ((-73.16550 -7.34166, -73.05480 -7.381...\n\n\n2\n13\nAmazonas\nAM\nNorte\n1\nPOLYGON ((-67.32609 2.02971, -67.31682 2.00125...\n\n\n3\n14\nRoraima\nRR\nNorte\n1\nPOLYGON ((-60.20051 5.26434, -60.19828 5.26045...\n\n\n4\n15\nPará\nPA\nNorte\n1\nMULTIPOLYGON (((-46.43676 -1.01905, -46.43723 ..."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#carregar-um-json",
+    "href": "3p_gpd_carregar_arquivos.html#carregar-um-json",
+    "title": "3  Carregando arquivos",
+    "section": "3.3 Carregar um json",
+    "text": "3.3 Carregar um json\nfonte: geodata-br\ngpd.read_file('caminho-arquivo-json')\n\n# Carregando os arquivos em json\nmun = gpd.read_file('./arquivos/municipios.json')\n\n# Exibindo as 5 primeiras linhas e todas as colunas\nmun.head()\n\n\n\n\n\n\n\n\nid\nname\ndescription\ngeometry\n\n\n\n\n0\n2900108\nAbaíra\nAbaíra\nPOLYGON ((-41.64360 -13.18644, -41.64077 -13.1...\n\n\n1\n2900207\nAbaré\nAbaré\nPOLYGON ((-39.22816 -8.70990, -39.22188 -8.711...\n\n\n2\n2900306\nAcajutiba\nAcajutiba\nPOLYGON ((-37.98233 -11.59187, -37.96781 -11.6...\n\n\n3\n2900355\nAdustina\nAdustina\nPOLYGON ((-38.05846 -10.43517, -38.04858 -10.4...\n\n\n4\n2900405\nÁgua Fria\nÁgua Fria\nPOLYGON ((-38.71690 -11.69121, -38.69038 -11.6..."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#listagem-de-formatos-que-podemos-carregar-no-geopandas",
+    "href": "3p_gpd_carregar_arquivos.html#listagem-de-formatos-que-podemos-carregar-no-geopandas",
+    "title": "3  Carregando arquivos",
+    "section": "3.4 Listagem de formatos que podemos carregar no Geopandas",
+    "text": "3.4 Listagem de formatos que podemos carregar no Geopandas\nr - somente leitura\nrw - leitura e escrita\n\nimport pyogrio; pyogrio.list_drivers()\n\n{'FITS': 'rw',\n 'PCIDSK': 'rw',\n 'netCDF': 'rw',\n 'PDS4': 'rw',\n 'VICAR': 'rw',\n 'JP2OpenJPEG': 'r',\n 'PDF': 'rw',\n 'MBTiles': 'rw',\n 'TileDB': 'rw',\n 'BAG': 'rw',\n 'EEDA': 'r',\n 'OGCAPI': 'r',\n 'ESRI Shapefile': 'rw',\n 'MapInfo File': 'rw',\n 'UK .NTF': 'r',\n 'LVBAG': 'r',\n 'OGR_SDTS': 'r',\n 'S57': 'rw',\n 'DGN': 'rw',\n 'OGR_VRT': 'r',\n 'Memory': 'rw',\n 'CSV': 'rw',\n 'NAS': 'r',\n 'GML': 'rw',\n 'GPX': 'rw',\n 'LIBKML': 'rw',\n 'KML': 'rw',\n 'GeoJSON': 'rw',\n 'GeoJSONSeq': 'rw',\n 'ESRIJSON': 'r',\n 'TopoJSON': 'r',\n 'Interlis 1': 'rw',\n 'Interlis 2': 'rw',\n 'OGR_GMT': 'rw',\n 'GPKG': 'rw',\n 'SQLite': 'rw',\n 'WAsP': 'rw',\n 'PostgreSQL': 'rw',\n 'OpenFileGDB': 'rw',\n 'DXF': 'rw',\n 'CAD': 'r',\n 'FlatGeobuf': 'rw',\n 'Geoconcept': 'rw',\n 'GeoRSS': 'rw',\n 'VFK': 'r',\n 'PGDUMP': 'rw',\n 'OSM': 'r',\n 'GPSBabel': 'rw',\n 'OGR_PDS': 'r',\n 'WFS': 'r',\n 'OAPIF': 'r',\n 'EDIGEO': 'r',\n 'SVG': 'r',\n 'Idrisi': 'r',\n 'XLS': 'r',\n 'ODS': 'rw',\n 'XLSX': 'rw',\n 'Elasticsearch': 'rw',\n 'Carto': 'rw',\n 'AmigoCloud': 'rw',\n 'SXF': 'r',\n 'Selafin': 'rw',\n 'JML': 'rw',\n 'PLSCENES': 'r',\n 'CSW': 'r',\n 'VDV': 'rw',\n 'GMLAS': 'r',\n 'MVT': 'rw',\n 'NGW': 'rw',\n 'MapML': 'rw',\n 'GTFS': 'r',\n 'PMTiles': 'rw',\n 'JSONFG': 'rw',\n 'TIGER': 'r',\n 'AVCBin': 'r',\n 'AVCE00': 'r',\n 'HTTP': 'r'}\n\n\n---------------------------------------------------------------------------\nModuleNotFoundError                       Traceback (most recent call last)\nCell In[9], line 1\n----&gt; 1 import pyogrio; pyogrio.list_drivers()\n\nModuleNotFoundError: No module named 'pyogrio'\n\n# caso tenha a mensagem acima use o comando abaixo\npip install pyogrio\n\n# se usar o conda ou anaconda:\nconda install pyogrio"
+  },
+  {
+    "objectID": "3p_gpd_gerando_mapas.html#o-método-plot-exibe-o-desenho-do-geodataframe",
+    "href": "3p_gpd_gerando_mapas.html#o-método-plot-exibe-o-desenho-do-geodataframe",
+    "title": "4  Grando os Mapas",
+    "section": "4.1 O método plot exibe o desenho do GeoDataFrame",
+    "text": "4.1 O método plot exibe o desenho do GeoDataFrame"
+  },
+  {
+    "objectID": "3p_gpd_gerando_mapas.html#alterando-a-figura",
+    "href": "3p_gpd_gerando_mapas.html#alterando-a-figura",
+    "title": "4  Grando os Mapas",
+    "section": "4.2 Alterando a figura",
+    "text": "4.2 Alterando a figura\nUsando-se o matplotlib podemos configurar outros parâmetros da impressão do mapa.\n\n4.2.1 Tamanho\nfigsize() - podemos alterar a largura e a altura da figura passando os valores que são em polegadas. Exemplo: figsize=(7x5), ou transformar para mm dividindo por 25,4.\nlargura 100mm = 100 / 25,4 = 3,937007874pol altura 80mm = 80 / 25,4 = 3,149606299pol\n\nfrom matplotlib import pyplot as plt\n# Criando objetos da figura e do axes\nfig, ax = plt.subplots(figsize=(5, 2))\n\ncm = 1/2.54  # centimeters in inches\n\nfig, ax = plt.subplots(figsize=(5*cm, 2*cm))"
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "5  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  }
+]
