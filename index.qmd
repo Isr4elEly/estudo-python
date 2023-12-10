@@ -10,8 +10,12 @@ Visando organizar meu códigos e procedimentos que estudo e uso no meu dia-a-dia
 ### Divisões do material
 
 1. Python
+   1. Funções
 2. Quarto
    1. Criando um book
 3. Pandas
 4. Geopandas
+   1. Carregando Arquivos
+   2. Plotando Mapas
+   3. Exportando arquivos
 5. Leflet

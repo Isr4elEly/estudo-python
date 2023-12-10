@@ -1,0 +1,24 @@
+# Exportar GeoDataFrame
+
+## para kml
+
+Para utilizar essa função, a biblioteca `fiona` tem que está instalada.
+
+```python
+pip install fiona
+
+OU
+
+conda install fiona
+```
+
+
+```python
+import geopandas as gpd
+import fiona
+# Habilitando drive kml
+fiona.supported_drivers['KML'] = 'rw'
+df = gpd.read_file('arquivo_espacial')
+df.to_file(f'nome_do_arquivo.kml', driver='KML')
+
+```

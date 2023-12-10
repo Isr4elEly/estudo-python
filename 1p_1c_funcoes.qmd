@@ -1,1 +1,64 @@
-# Funções Pyhton
+# FUNÇÕES
+
+
+## Função para formatar CPF e CNPJ
+Classe que tem dois métodos, um para formatar CNPJ e outro pra formatar CPF, geralmente uso quando baixo dados do Sistema Nacional de Cadastro Rural - SNCR onde a tabela exportada necessita de ajustes na formatação antes de utilizar os dados em análises.
+
+```python
+class SNCR():
+
+    def format_doc(self, doc: str) -> str:
+        """
+        Formata o número do documento cpf e cnpj na tabela exportada do SNCR:
+
+        doc -> string com o número do docuemto que veio da expostação do SNCR sem formataçã;
+
+        retorna o CNPJ ou o CPF formatado
+        """
+        doc = str(doc).split('.')[0]
+        try:
+            if len(doc) <=11:
+                numero = "{:0>11}".format(doc)
+                t1 = numero[0:3]
+                t2 = numero[3:6]
+                t3 = numero[6:9]
+                t4 = numero[9:]
+                numero = f'{t1}.{t2}.{t3}-{t4}'
+                return numero
+            else:
+                numero = "{:0>14}".format(doc)
+                t1 = numero[0:2]
+                t2 = numero[2:5]
+                t3 = numero[5:8]
+                t4 = numero[8:12]
+                t5 = numero[12:]
+                numero = f'{t1}.{t2}.{t3}/{t4}-{t5}'
+                return numero
+        except:
+            return ''
+
+
+
+
+    
+    def format_cod(self, codigo: str) -> str:
+        """
+           Formatar código do imóvel na tabela exportada do SNCR:
+
+           codigo -> string constante da tabela expostada do sncr
+
+           para código em criação retornar o padrão '000.000.000.000-0' 
+        """
+
+        if codigo == 'nan':
+            return '000.000.000.000-0'
+        else:
+            codigo = '{:0>13}'.format(str(codigo).split('.')[0])
+            t1 = codigo[0:3]
+            t2 = codigo[3:6]
+            t3 = codigo[6:9]
+            t4 = codigo[9:12]
+            t5 = codigo[12:]
+            codigo = f'{t1}.{t2}.{t3}.{t4}-{t5}'
+            return codigo
+```
