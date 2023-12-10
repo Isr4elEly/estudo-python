@@ -1,0 +1,89 @@
+# Carregando arquivos
+
+<div style="text-align: justify"> 
+
+
+Para carregar um arquivo com o Geopandas temos que fazer a importação no código python.
+
+```{python}
+# importar o geopandas
+import geopandas as gpd
+# importações auxiliares
+from IPython.display import display, Markdown
+```
+
+## Carregando GeoPackage
+ Fonte: fonte: [Acervo Fundiário INCRA](https://acervofundiario.incra.gov.br/){target="_blank"}
+
+[GeoPackage](https://www.geopackage.org/){target="_blank"} é um formato aberto, baseado em padrões, independente de plataforma, portátil, autodescritivo e compacto para transferência de informações geoespaciais.
+
+```python
+gpd.read_file('caminho-arquivo-gpkg', layer='nome-da-tabela')
+```
+
+```{python}
+# Carregando os arquivos em GeoPackage
+assentamentos = gpd.read_file('./arquivos/dados.gpkg', layer='assentamentos_ba')
+
+# Exibindo os dados até a 5ª linha e da 10 coluna até a última
+assentamentos.iloc[:5,10:]
+```
+
+## Carregando Shape
+
+fonte: [ibge](https://www.ibge.gov.br/geociencias/downloads-geociencias.html){target="_blank"}
+
+```python
+gpd.read_file('caminho-arquivo-shp')
+```
+
+```{python}
+# Carregando os arquivos em shape
+uf = gpd.read_file('./arquivos/uf.shp')
+
+# Exibindo as 5 primeiras linhas e todas as colunas
+uf.head()
+```
+
+## Carregar um json
+
+fonte: [geodata-br](https://github.com/tbrugz/geodata-br){target="_blank"}
+
+```python
+gpd.read_file('caminho-arquivo-json')
+```
+
+```{python}
+# Carregando os arquivos em json
+mun = gpd.read_file('./arquivos/municipios.json')
+
+# Exibindo as 5 primeiras linhas e todas as colunas
+mun.head()
+```
+
+## Listagem de formatos que podemos carregar no Geopandas
+
+**r** - somente leitura
+
+**rw**  - leitura e escrita
+
+```{python}
+
+import pyogrio; pyogrio.list_drivers()
+
+```
+
+```python
+---------------------------------------------------------------------------
+ModuleNotFoundError                       Traceback (most recent call last)
+Cell In[9], line 1
+----> 1 import pyogrio; pyogrio.list_drivers()
+
+ModuleNotFoundError: No module named 'pyogrio'
+
+# caso tenha a mensagem acima use o comando abaixo
+pip install pyogrio
+
+# se usar o conda ou anaconda:
+conda install pyogrio
+```

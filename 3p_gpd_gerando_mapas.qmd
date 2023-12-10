@@ -1,0 +1,39 @@
+# Grando os Mapas
+
+<div style="text-align: justify">
+
+GeoPandas fornece uma interface de alto nível para a biblioteca matplotlib para fazer mapas. Mapear formas é tão fácil quanto usar o método `plot()` em `GeoSeries` ou `GeoDataFrame`.
+
+```{python}
+# importar o geopandas
+import geopandas as gpd
+# importações auxiliares
+from IPython.display import display, Markdown
+uf = gpd.read_file('./arquivos/uf.shp')
+
+display(Markdown('## O método `plot` exibe o desenho do GeoDataFrame'))
+
+uf.plot()
+```
+
+## Alterando a figura
+
+Usando-se o [matplotlib](https://matplotlib.org/stable/users/index.html){target="_blank"} podemos configurar outros parâmetros da impressão do mapa.
+
+### Tamanho
+
+`figsize()` - podemos alterar a largura e a altura da figura passando os valores que são em polegadas. Exemplo: `figsize=(7x5)`, ou transformar para mm dividindo por 25,4.
+
+largura 100mm = 100 / 25,4 = 3,937007874pol
+altura   80mm = 80  / 25,4 = 3,149606299pol
+
+```{python}
+from matplotlib import pyplot as plt
+# Criando objetos da figura e do axes
+fig, ax = plt.subplots(figsize=(5, 2))
+
+cm = 1/2.54  # centimeters in inches
+
+fig, ax = plt.subplots(figsize=(5*cm, 2*cm))
+
+```

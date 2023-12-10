@@ -1,0 +1,16 @@
+# Geopandas
+<div style="text-align: justify"> 
+## GeoPandas
+
+GeoPandas é um projeto de código aberto para facilitar o trabalho com dados geoespaciais em python. GeoPandas estende os tipos de dados usados ​​pelos pandas para permitir operações espaciais em tipos geométricos. As operações geométricas são executadas por formas . Geopandas depende ainda de fiona para acesso a arquivos e matplotlib para plotagem.
+
+## Descrição 
+
+O objetivo do GeoPandas é facilitar o trabalho com dados geoespaciais em python. Ele combina os recursos de pandas e shapely, fornecendo operações geoespaciais em pandas e uma interface de alto nível para múltiplas geometrias. GeoPandas permite que você execute facilmente operações em python que, de outra forma, exigiriam um banco de dados espacial como PostGIS.
+
+Outras insformações em: [Geopandas](https://geopandas.org/en/stable/index.html){target="_blank"}
+
+
+O geopandas contém várias funcionalidades do Pandas com a adição da coluna *geometry* que permite a utilização dos dados geográficos.
+
+![](./img/geopandas_tab.svg)

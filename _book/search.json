@@ -44,8 +44,85 @@
   {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "3  Summary",
+    "title": "5  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "3p_geopandas.html#geopandas",
+    "href": "3p_geopandas.html#geopandas",
+    "title": "Geopandas",
+    "section": "GeoPandas",
+    "text": "GeoPandas\nGeoPandas é um projeto de código aberto para facilitar o trabalho com dados geoespaciais em python. GeoPandas estende os tipos de dados usados ​​pelos pandas para permitir operações espaciais em tipos geométricos. As operações geométricas são executadas por formas . Geopandas depende ainda de fiona para acesso a arquivos e matplotlib para plotagem."
+  },
+  {
+    "objectID": "3p_geopandas.html#descrição",
+    "href": "3p_geopandas.html#descrição",
+    "title": "Geopandas",
+    "section": "Descrição",
+    "text": "Descrição\nO objetivo do GeoPandas é facilitar o trabalho com dados geoespaciais em python. Ele combina os recursos de pandas e shapely, fornecendo operações geoespaciais em pandas e uma interface de alto nível para múltiplas geometrias. GeoPandas permite que você execute facilmente operações em python que, de outra forma, exigiriam um banco de dados espacial como PostGIS.\nOutras insformações em: Geopandas\nO geopandas contém várias funcionalidades do Pandas com a adição da coluna geometry que permite a utilização dos dados geográficos."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html",
+    "href": "3p_gpd_carregar_arquivos.html",
+    "title": "3  Carregando arquivos",
+    "section": "",
+    "text": "Para carregar um arquivo com o Geopandas temos que fazer a importação no código python.\n\n# importar o geopandas\nimport geopandas as gpd\n# importações auxiliares\nfrom IPython.display import display, Markdown\n\n# Carregando os arquivos em GeoPackage\nassentamentos = gpd.read_file('./arquivos/dados.gpkg', layer='assentamentos_ba')"
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#carregando-geopackage",
+    "href": "3p_gpd_carregar_arquivos.html#carregando-geopackage",
+    "title": "3  Carregando arquivos",
+    "section": "3.1 Carregando GeoPackage",
+    "text": "3.1 Carregando GeoPackage\nFonte: fonte: Acervo Fundiário INCRA\nGeoPackage é um formato aberto, baseado em padrões, independente de plataforma, portátil, autodescritivo e compacto para transferência de informações geoespaciais.\ngpd.read_file('caminho-arquivo-gpkg', layer='nome-da-tabela')\n\n# Carregando os arquivos em GeoPackage\nassentamentos = gpd.read_file('./arquivos/dados.gpkg', layer='assentamentos_ba')\n\n# Exibindo os dados até a 5ª linha e da 10 coluna até a última\nassentamentos.iloc[:5,10:]\n\n\n\n\n\n\n\n\ndata_obten\narea_calc_\nsr\ndescricao_\ngeometry\n\n\n\n\n0\n06/12/2005\n2212.8004\nNone\nNone\nMULTIPOLYGON (((-38.65413 -10.24068, -38.65273...\n\n\n1\n26/10/2004\n318.7920\nNone\nNone\nMULTIPOLYGON (((-39.31049 -10.26928, -39.31015...\n\n\n2\n17/11/2004\n212.4702\nNone\nNone\nMULTIPOLYGON (((-39.70806 -10.69716, -39.70776...\n\n\n3\n22/07/2009\n1269.7391\nNone\nNone\nMULTIPOLYGON (((-40.83155 -13.63177, -40.82449...\n\n\n4\n16/12/2014\n3970.8382\nNone\nNone\nMULTIPOLYGON (((-39.56863 -17.14271, -39.56855..."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#carregando-shape",
+    "href": "3p_gpd_carregar_arquivos.html#carregando-shape",
+    "title": "3  Carregando arquivos",
+    "section": "3.2 Carregando Shape",
+    "text": "3.2 Carregando Shape\nfonte: ibge\ngpd.read_file('caminho-arquivo-shp')\n\n# Carregando os arquivos em GeoPackage\nuf = gpd.read_file('./arquivos/uf.shp')\n\n# Exibindo as 5 primeiras linhas e todas as colunas\nuf.head()\n\n\n\n\n\n\n\n\nCD_UF\nNM_UF\nSIGLA\nNM_REGIAO\namaz_legal\ngeometry\n\n\n\n\n0\n11\nRondônia\nRO\nNorte\n1\nPOLYGON ((-62.86662 -7.97587, -62.86017 -7.982...\n\n\n1\n12\nAcre\nAC\nNorte\n1\nPOLYGON ((-73.16550 -7.34166, -73.05480 -7.381...\n\n\n2\n13\nAmazonas\nAM\nNorte\n1\nPOLYGON ((-67.32609 2.02971, -67.31682 2.00125...\n\n\n3\n14\nRoraima\nRR\nNorte\n1\nPOLYGON ((-60.20051 5.26434, -60.19828 5.26045...\n\n\n4\n15\nPará\nPA\nNorte\n1\nMULTIPOLYGON (((-46.43676 -1.01905, -46.43723 ..."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#carregar-um-json",
+    "href": "3p_gpd_carregar_arquivos.html#carregar-um-json",
+    "title": "3  Carregando arquivos",
+    "section": "3.3 Carregar um json",
+    "text": "3.3 Carregar um json\nfonte: geodata-br\ngpd.read_file('caminho-arquivo-json')\n\n# Carregando os arquivos em GeoPackage\nmun = gpd.read_file('./arquivos/municipios.json')\n\n# Exibindo as 5 primeiras linhas e todas as colunas\nmun.head()\n\n\n\n\n\n\n\n\nid\nname\ndescription\ngeometry\n\n\n\n\n0\n2900108\nAbaíra\nAbaíra\nPOLYGON ((-41.64360 -13.18644, -41.64077 -13.1...\n\n\n1\n2900207\nAbaré\nAbaré\nPOLYGON ((-39.22816 -8.70990, -39.22188 -8.711...\n\n\n2\n2900306\nAcajutiba\nAcajutiba\nPOLYGON ((-37.98233 -11.59187, -37.96781 -11.6...\n\n\n3\n2900355\nAdustina\nAdustina\nPOLYGON ((-38.05846 -10.43517, -38.04858 -10.4...\n\n\n4\n2900405\nÁgua Fria\nÁgua Fria\nPOLYGON ((-38.71690 -11.69121, -38.69038 -11.6..."
+  },
+  {
+    "objectID": "3p_gpd_carregar_arquivos.html#listagem-de-formatos-que-podemos-carregar-no-geopandas",
+    "href": "3p_gpd_carregar_arquivos.html#listagem-de-formatos-que-podemos-carregar-no-geopandas",
+    "title": "3  Carregando arquivos",
+    "section": "3.4 Listagem de formatos que podemos carregar no Geopandas",
+    "text": "3.4 Listagem de formatos que podemos carregar no Geopandas\nr - somente leitura\nrw - leitura e escrita\n\nimport pyogrio; pyogrio.list_drivers()\n\n{'FITS': 'rw',\n 'PCIDSK': 'rw',\n 'netCDF': 'rw',\n 'PDS4': 'rw',\n 'VICAR': 'rw',\n 'JP2OpenJPEG': 'r',\n 'PDF': 'rw',\n 'MBTiles': 'rw',\n 'TileDB': 'rw',\n 'BAG': 'rw',\n 'EEDA': 'r',\n 'OGCAPI': 'r',\n 'ESRI Shapefile': 'rw',\n 'MapInfo File': 'rw',\n 'UK .NTF': 'r',\n 'LVBAG': 'r',\n 'OGR_SDTS': 'r',\n 'S57': 'rw',\n 'DGN': 'rw',\n 'OGR_VRT': 'r',\n 'Memory': 'rw',\n 'CSV': 'rw',\n 'NAS': 'r',\n 'GML': 'rw',\n 'GPX': 'rw',\n 'LIBKML': 'rw',\n 'KML': 'rw',\n 'GeoJSON': 'rw',\n 'GeoJSONSeq': 'rw',\n 'ESRIJSON': 'r',\n 'TopoJSON': 'r',\n 'Interlis 1': 'rw',\n 'Interlis 2': 'rw',\n 'OGR_GMT': 'rw',\n 'GPKG': 'rw',\n 'SQLite': 'rw',\n 'WAsP': 'rw',\n 'PostgreSQL': 'rw',\n 'OpenFileGDB': 'rw',\n 'DXF': 'rw',\n 'CAD': 'r',\n 'FlatGeobuf': 'rw',\n 'Geoconcept': 'rw',\n 'GeoRSS': 'rw',\n 'VFK': 'r',\n 'PGDUMP': 'rw',\n 'OSM': 'r',\n 'GPSBabel': 'rw',\n 'OGR_PDS': 'r',\n 'WFS': 'r',\n 'OAPIF': 'r',\n 'EDIGEO': 'r',\n 'SVG': 'r',\n 'Idrisi': 'r',\n 'XLS': 'r',\n 'ODS': 'rw',\n 'XLSX': 'rw',\n 'Elasticsearch': 'rw',\n 'Carto': 'rw',\n 'AmigoCloud': 'rw',\n 'SXF': 'r',\n 'Selafin': 'rw',\n 'JML': 'rw',\n 'PLSCENES': 'r',\n 'CSW': 'r',\n 'VDV': 'rw',\n 'GMLAS': 'r',\n 'MVT': 'rw',\n 'NGW': 'rw',\n 'MapML': 'rw',\n 'GTFS': 'r',\n 'PMTiles': 'rw',\n 'JSONFG': 'rw',\n 'TIGER': 'r',\n 'AVCBin': 'r',\n 'AVCE00': 'r',\n 'HTTP': 'r'}\n\n\n---------------------------------------------------------------------------\nModuleNotFoundError                       Traceback (most recent call last)\nCell In[9], line 1\n----&gt; 1 import pyogrio; pyogrio.list_drivers()\n\nModuleNotFoundError: No module named 'pyogrio'\n\n# caso tenha a mensagem acima use o comando abaixo\npip install pyogrio\n\n# se usar o conda ou anaconda:\nconda install pyogrio"
+  },
+  {
+    "objectID": "3p_gpd_gerando_mapas.html",
+    "href": "3p_gpd_gerando_mapas.html",
+    "title": "4  Grando os Mapas",
+    "section": "",
+    "text": "# importar o geopandas\nimport geopandas as gpd\n# importações auxiliares\nfrom IPython.display import display, Markdown\nassentamentos = gpd.read_file('./arquivos/dados.gpkg', layer='assentamentos_ba')\n\nassentamentos.plot()\n\n&lt;Axes: &gt;"
+  },
+  {
+    "objectID": "3p_gpd_gerando_mapas.html#o-método-plot-exibe-o-desenho-do-geodataframe",
+    "href": "3p_gpd_gerando_mapas.html#o-método-plot-exibe-o-desenho-do-geodataframe",
+    "title": "4  Grando os Mapas",
+    "section": "4.1 O método plot exibe o desenho do GeoDataFrame",
+    "text": "4.1 O método plot exibe o desenho do GeoDataFrame"
+  },
+  {
+    "objectID": "3p_gpd_gerando_mapas.html#configurando-o-tamanho-da-figura",
+    "href": "3p_gpd_gerando_mapas.html#configurando-o-tamanho-da-figura",
+    "title": "4  Grando os Mapas",
+    "section": "4.2 Configurando o tamanho da figura",
+    "text": "4.2 Configurando o tamanho da figura\nUsando-se o matplotlib podemos configurar outros parâmetros da impressão do mapa.\n\nfrom matplotlib import pyplot as plt"
+  },
+  {
+    "objectID": "3p_gpd_gerando_mapas.html#alterando-a-figura",
+    "href": "3p_gpd_gerando_mapas.html#alterando-a-figura",
+    "title": "4  Grando os Mapas",
+    "section": "4.2 Alterando a figura",
+    "text": "4.2 Alterando a figura\nUsando-se o matplotlib podemos configurar outros parâmetros da impressão do mapa.\n\n4.2.1 Tamanho\nfigsize() - podemos alterar a largura e a altura da figura passando os valores que são em polegadas. Exemplo: figsize=(7x5), ou transformar para mm dividindo por 25,4.\nlargura 100mm = 100 / 25,4 = 3,937007874pol altura 80mm = 80 / 25,4 = 3,149606299pol\n\nfrom matplotlib import pyplot as plt\n# Criando objetos da figura e do axes\nfig, ax = plt.subplots(figsize=(5, 2))\n\ncm = 1/2.54  # centimeters in inches\n\nfig, ax = plt.subplots(figsize=(5*cm, 2*cm))"
   }
 ]

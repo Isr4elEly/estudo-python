@@ -3,7 +3,7 @@
 
 A documentação completa pode ser acessada em: [Quarto](https://quarto.org/)
 
-![](./img/quarto1.png)
+![](./img/quarto1.png){target="_blank"}
 
 
 

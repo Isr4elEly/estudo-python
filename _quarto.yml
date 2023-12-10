@@ -16,6 +16,10 @@ book:
     - part: 2p_quarto.qmd
       chapters: 
         - 2p_1c_create_book.qmd
+    - part: 3p_geopandas.qmd
+      chapters:
+        - 3p_gpd_carregar_arquivos.qmd
+        - 3p_gpd_gerando_mapas.qmd
     - summary.qmd
     - references.qmd
 
@@ -28,8 +32,8 @@ format:
     page-layout: full
     css: styles.css
     toc: false
-    fig-width: 9
-    fig-height: 6.5
+    fig-width: 12
+    fig-height: 8.7
     fig-align: center
 
   pdf:
