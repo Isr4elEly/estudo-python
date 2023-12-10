@@ -5,6 +5,8 @@ project:
 jupyter: python3
 
 book:
+  sidebar:
+    search: true
   title: "Estudos em Python"
   author: "Israel Ely"
   date: "09/12/2023"
@@ -21,7 +23,6 @@ book:
       chapters:
         - 3p_gpd_carregar_arquivos.qmd
         - 3p_gpd_gerando_mapas.qmd
-    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
@@ -34,7 +35,7 @@ format:
     css: styles.css
     toc: false
     fig-width: 12
-    fig-height: 8.7
+    fig-height: 10
     fig-align: center
 
   pdf:

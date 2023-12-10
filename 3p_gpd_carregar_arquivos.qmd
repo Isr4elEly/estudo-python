@@ -13,14 +13,19 @@ from IPython.display import display, Markdown
 ```
 
 ## Carregando GeoPackage
- Fonte: fonte: [Acervo Fundiário INCRA](https://acervofundiario.incra.gov.br/){target="_blank"}
+
 
 [GeoPackage](https://www.geopackage.org/){target="_blank"} é um formato aberto, baseado em padrões, independente de plataforma, portátil, autodescritivo e compacto para transferência de informações geoespaciais.
+
+Fonte: fonte: [Acervo Fundiário INCRA](https://acervofundiario.incra.gov.br/){target="_blank"}
+
+**Sintaxe básica**
 
 ```python
 gpd.read_file('caminho-arquivo-gpkg', layer='nome-da-tabela')
 ```
 
+**_Carregando os Arquivos_**
 ```{python}
 # Carregando os arquivos em GeoPackage
 assentamentos = gpd.read_file('./arquivos/dados.gpkg', layer='assentamentos_ba')
@@ -33,9 +38,12 @@ assentamentos.iloc[:5,10:]
 
 fonte: [ibge](https://www.ibge.gov.br/geociencias/downloads-geociencias.html){target="_blank"}
 
+**Sintaxe básica**
+
 ```python
 gpd.read_file('caminho-arquivo-shp')
 ```
+**_Carregando os Arquivos_**
 
 ```{python}
 # Carregando os arquivos em shape
@@ -49,9 +57,13 @@ uf.head()
 
 fonte: [geodata-br](https://github.com/tbrugz/geodata-br){target="_blank"}
 
+**Sintaxe básica**
+
 ```python
 gpd.read_file('caminho-arquivo-json')
 ```
+
+**_Carregando os Arquivos_**
 
 ```{python}
 # Carregando os arquivos em json

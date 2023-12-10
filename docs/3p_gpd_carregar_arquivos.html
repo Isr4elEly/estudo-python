@@ -250,9 +250,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="carregando-geopackage" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="carregando-geopackage"><span class="header-section-number">3.1</span> Carregando GeoPackage</h2>
-<p>Fonte: fonte: <a href="https://acervofundiario.incra.gov.br/" target="_blank">Acervo Fundiário INCRA</a></p>
 <p><a href="https://www.geopackage.org/" target="_blank">GeoPackage</a> é um formato aberto, baseado em padrões, independente de plataforma, portátil, autodescritivo e compacto para transferência de informações geoespaciais.</p>
+<p>Fonte: fonte: <a href="https://acervofundiario.incra.gov.br/" target="_blank">Acervo Fundiário INCRA</a></p>
+<p><strong>Sintaxe básica</strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gpd.read_file(<span class="st">'caminho-arquivo-gpkg'</span>, layer<span class="op">=</span><span class="st">'nome-da-tabela'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>Carregando os Arquivos</em></strong></p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando os arquivos em GeoPackage</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>assentamentos <span class="op">=</span> gpd.read_file(<span class="st">'./arquivos/dados.gpkg'</span>, layer<span class="op">=</span><span class="st">'assentamentos_ba'</span>)</span>
@@ -325,7 +327,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="carregando-shape" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="carregando-shape"><span class="header-section-number">3.2</span> Carregando Shape</h2>
 <p>fonte: <a href="https://www.ibge.gov.br/geociencias/downloads-geociencias.html" target="_blank">ibge</a></p>
+<p><strong>Sintaxe básica</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>gpd.read_file(<span class="st">'caminho-arquivo-shp'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>Carregando os Arquivos</em></strong></p>
 <div class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando os arquivos em shape</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>uf <span class="op">=</span> gpd.read_file(<span class="st">'./arquivos/uf.shp'</span>)</span>
@@ -404,7 +408,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="carregar-um-json" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="carregar-um-json"><span class="header-section-number">3.3</span> Carregar um json</h2>
 <p>fonte: <a href="https://github.com/tbrugz/geodata-br" target="_blank">geodata-br</a></p>
+<p><strong>Sintaxe básica</strong></p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>gpd.read_file(<span class="st">'caminho-arquivo-json'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong><em>Carregando os Arquivos</em></strong></p>
 <div class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando os arquivos em json</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>mun <span class="op">=</span> gpd.read_file(<span class="st">'./arquivos/municipios.json'</span>)</span>

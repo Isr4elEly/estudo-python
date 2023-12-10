@@ -18,22 +18,111 @@ uf.plot()
 
 ## Alterando a figura
 
-Usando-se o [matplotlib](https://matplotlib.org/stable/users/index.html){target="_blank"} podemos configurar outros parâmetros da impressão do mapa.
+Usando-se o [matplotlib](https://matplotlib.org/stable/users/index.html){target="_blank"} podemos configurar outros parâmetros da impressão do mapa. Na figura abaixo podemos verificar as divérsas partes de um gráfico gerado pelo matplotlib.
+
+![](./img/figure_matplotlib.webp){width="600"}
 
 ### Tamanho
 
-`figsize()` - podemos alterar a largura e a altura da figura passando os valores que são em polegadas. Exemplo: `figsize=(7x5)`, ou transformar para mm dividindo por 25,4.
-
-largura 100mm = 100 / 25,4 = 3,937007874pol
-altura   80mm = 80  / 25,4 = 3,149606299pol
+`figsize()` - podemos alterar a largura e a altura da figura passando os valores que são em polegadas.
 
 ```{python}
 from matplotlib import pyplot as plt
 # Criando objetos da figura e do axes
+# Tamanho da figura: largura = 5 inches, altura = 2 inches.
 fig, ax = plt.subplots(figsize=(5, 2))
 
-cm = 1/2.54  # centimeters in inches
+# centimeters in inches
+cm = 1/2.54
 
-fig, ax = plt.subplots(figsize=(5*cm, 2*cm))
+# Tamanho da figura: largura = 12 cm (4,724409449 inches), altura = 8 cm (3,149606296 inches).
+fig, ax = plt.subplots(figsize=(12*cm, 8*cm))
+```
+
+### Plotando mapa simples
+
+
+```{python}
+#| fig-align: center
+
+# Criando a figura e o axes
+fig1, ax1 = plt.subplots(figsize=(12, 10))
+
+uf.plot(ax=ax1, facecolor = 'none', edgecolor = 'black', linewidth = 0.7)
+# Título da figura
+plt.title('Unidades da Federação')
+# Mostra as grades de coordenadas
+plt.grid(visible=True)
+# Colocar nomes nos eixos
+plt.xlabel('Longitude (°)')
+plt.ylabel('Latitude (°)')
+# Mostra a figura 
+plt.show()
 
 ```
+
+Comando|Resultado
+-------|---------
+facecolor|cor interna do polígono
+edgecolor|cor da linha
+linewidth|espessura da linha
+
+#### Cores
+
+As cores podem ser informadas pelo nome ou através do caractere hexadecimal.
+
+![](./img/cores-html.png){width="800"}
+
+
+### Plotando mapa temático pelo nome do estado.
+
+
+```{python}
+#| fig-align: center
+
+# Listando as colunas
+display(Markdown('*Colunas do arquivo de unidades da federação*'))
+display(uf.columns) 
+
+# Criando a figura e o axes
+fig2, ax2 = plt.subplots(figsize=(12, 10))
+
+uf.plot(ax=ax2,column='NM_UF', edgecolor = 'black', linewidth = 0.7, categorical=True, legend=True)
+# Título da figura
+plt.title('Unidades da Federação')
+# Mostra as grades de coordenadas
+plt.grid(visible=True)
+# Colocar nomes nos eixos
+plt.xlabel('Longitude (°)')
+plt.ylabel('Latitude (°)')
+# Mostra a figura 
+plt.show()
+
+```
+
+### Ajustando a legenda.
+
+
+```{python}
+#| fig-align: center
+
+# Criando a figura e o axes
+fig3, ax3 = plt.subplots(figsize=(12, 10))
+
+uf.plot(ax=ax3,column='NM_UF', edgecolor = 'black', linewidth = 0.7, categorical=True, legend=True,
+legend_kwds={'loc': 'center left','bbox_to_anchor':(0.85,0.5)})
+# Título da figura
+plt.title('Unidades da Federação')
+# Mostra as grades de coordenadas
+plt.grid(visible=True)
+# Colocar nomes nos eixos
+plt.xlabel('Longitude (°)')
+plt.ylabel('Latitude (°)')
+# Mostra a figura 
+plt.show()
+
+```
+Comando|Resultado
+-------|---------
+'loc': 'center left'|localização da legenda = centro a esquerda
+'bbox_to_anchor'| deslocamento (x,y) = (0.85,0.5)

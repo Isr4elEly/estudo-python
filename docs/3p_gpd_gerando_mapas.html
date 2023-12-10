@@ -251,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="o-método-plot-exibe-o-desenho-do-geodataframe" class="level2 cell-output cell-output-display" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="o-método-plot-exibe-o-desenho-do-geodataframe"><span class="header-section-number">4.1</span> O método <code>plot</code> exibe o desenho do GeoDataFrame</h2>
 </section>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>&lt;Axes: &gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -260,26 +260,160 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="alterando-a-figura" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="alterando-a-figura"><span class="header-section-number">4.2</span> Alterando a figura</h2>
-<p>Usando-se o <a href="https://matplotlib.org/stable/users/index.html" target="_blank">matplotlib</a> podemos configurar outros parâmetros da impressão do mapa.</p>
+<p>Usando-se o <a href="https://matplotlib.org/stable/users/index.html" target="_blank">matplotlib</a> podemos configurar outros parâmetros da impressão do mapa. Na figura abaixo podemos verificar as divérsas partes de um gráfico gerado pelo matplotlib.</p>
+<p><img src="./img/figure_matplotlib.webp" class="img-fluid" width="600"></p>
 <section id="tamanho" class="level3" data-number="4.2.1">
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="tamanho"><span class="header-section-number">4.2.1</span> Tamanho</h3>
-<p><code>figsize()</code> - podemos alterar a largura e a altura da figura passando os valores que são em polegadas. Exemplo: <code>figsize=(7x5)</code>, ou transformar para mm dividindo por 25,4.</p>
-<p>largura 100mm = 100 / 25,4 = 3,937007874pol altura 80mm = 80 / 25,4 = 3,149606299pol</p>
+<p><code>figsize()</code> - podemos alterar a largura e a altura da figura passando os valores que são em polegadas.</p>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando objetos da figura e do axes</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">2</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="fl">2.54</span>  <span class="co"># centimeters in inches</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span><span class="op">*</span>cm, <span class="dv">2</span><span class="op">*</span>cm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamanho da figura: largura = 5 inches, altura = 2 inches.</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>, <span class="dv">2</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># centimeters in inches</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>cm <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="fl">2.54</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Tamanho da figura: largura = 12 cm (4,724409449 inches), altura = 8 cm (3,149606296 inches).</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span><span class="op">*</span>cm, <span class="dv">8</span><span class="op">*</span>cm))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <p><img src="3p_gpd_gerando_mapas_files/figure-html/cell-3-output-1.png" width="432" height="194"></p>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="3p_gpd_gerando_mapas_files/figure-html/cell-3-output-2.png" width="207" height="105"></p>
+<p><img src="3p_gpd_gerando_mapas_files/figure-html/cell-3-output-2.png" width="412" height="279"></p>
 </div>
 </div>
+</section>
+<section id="plotando-mapa-simples" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="plotando-mapa-simples"><span class="header-section-number">4.2.2</span> Plotando mapa simples</h3>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando a figura e o axes</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig1, ax1 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>uf.plot(ax<span class="op">=</span>ax1, facecolor <span class="op">=</span> <span class="st">'none'</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>, linewidth <span class="op">=</span> <span class="fl">0.7</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Título da figura</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Unidades da Federação'</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostra as grades de coordenadas</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Colocar nomes nos eixos</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Longitude (°)'</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Latitude (°)'</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostra a figura </span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3p_gpd_gerando_mapas_files/figure-html/cell-4-output-1.png" width="904" height="820" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>comando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>facecolor</td>
+<td>cor interna do polígono</td>
+</tr>
+<tr class="even">
+<td>edgecolor</td>
+<td>cor da linha</td>
+</tr>
+<tr class="odd">
+<td>linewidth</td>
+<td>espessura da linha</td>
+</tr>
+</tbody>
+</table>
+<section id="cores" class="level4" data-number="4.2.2.1">
+<h4 data-number="4.2.2.1" class="anchored" data-anchor-id="cores"><span class="header-section-number">4.2.2.1</span> Cores</h4>
+<p>As cores podem ser informadas pelo nome ou através do caractere hexadecimal.</p>
+<p><img src="./img/cores-html.png" class="img-fluid" width="800"></p>
+</section>
+</section>
+<section id="plotando-mapa-temático-pelo-nome-do-estado." class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="plotando-mapa-temático-pelo-nome-do-estado."><span class="header-section-number">4.2.3</span> Plotando mapa temático pelo nome do estado.</h3>
+<div class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Listando as colunas</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="st">'*Colunas do arquivo de unidades da federação*'</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>display(uf.columns) </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando a figura e o axes</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig2, ax2 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>uf.plot(ax<span class="op">=</span>ax2,column<span class="op">=</span><span class="st">'NM_UF'</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>, linewidth <span class="op">=</span> <span class="fl">0.7</span>, categorical<span class="op">=</span><span class="va">True</span>, legend<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Título da figura</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Unidades da Federação'</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostra as grades de coordenadas</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Colocar nomes nos eixos</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Longitude (°)'</span>)</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Latitude (°)'</span>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostra a figura </span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><em>Colunas do arquivo de unidades da federação</em></p>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>Index(['CD_UF', 'NM_UF', 'SIGLA', 'NM_REGIAO', 'amaz_legal', 'geometry'], dtype='object')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3p_gpd_gerando_mapas_files/figure-html/cell-5-output-3.png" width="904" height="820" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ajustando-a-legenda." class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="ajustando-a-legenda."><span class="header-section-number">4.2.4</span> Ajustando a legenda.</h3>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando a figura e o axes</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fig3, ax3 <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">10</span>))</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>uf.plot(ax<span class="op">=</span>ax3,column<span class="op">=</span><span class="st">'NM_UF'</span>, edgecolor <span class="op">=</span> <span class="st">'black'</span>, linewidth <span class="op">=</span> <span class="fl">0.7</span>, categorical<span class="op">=</span><span class="va">True</span>, legend<span class="op">=</span><span class="va">True</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>legend_kwds<span class="op">=</span>{<span class="st">'loc'</span>: <span class="st">'center left'</span>,<span class="st">'bbox_to_anchor'</span>:(<span class="fl">0.85</span>,<span class="fl">0.5</span>)})</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Título da figura</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Unidades da Federação'</span>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostra as grades de coordenadas</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>plt.grid(visible<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Colocar nomes nos eixos</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Longitude (°)'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Latitude (°)'</span>)</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostra a figura </span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="3p_gpd_gerando_mapas_files/figure-html/cell-6-output-1.png" width="971" height="820" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<table class="table">
+<thead>
+<tr class="header">
+<th>comando</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>‘loc’: ‘center left’</td>
+<td>localização da legenda = centro a esquerda</td>
+</tr>
+<tr class="even">
+<td>‘bbox_to_anchor’</td>
+<td>deslocamento (x,y) = (0.85,0.5)</td>
+</tr>
+</tbody>
+</table>
 
 
 </section>
