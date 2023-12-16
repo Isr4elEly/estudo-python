@@ -20,5 +20,5 @@ Visando organizar meu códigos e procedimentos que estudo e uso no meu dia-a-dia
    3. Exportando arquivos
    4. Criando Mapas com mais de uma camada
    5. ~Listar tabelas dentro do Geopackage~
-5. ~QGIS no códig python~
+5. ~QGIS no código python~
 6. Leflet

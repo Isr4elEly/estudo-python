@@ -23,6 +23,7 @@ book:
       chapters:
         - 3p_gpd_carregar_arquivos.qmd
         - 3p_gpd_mapas_gerando.qmd
+        - 3p_gpd_mapas_camadas.qmd
         - 3p_gpd_export_to.qmd
     - references.qmd
 
