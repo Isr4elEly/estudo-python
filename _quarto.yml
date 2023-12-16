@@ -15,14 +15,14 @@ book:
     - index.qmd
     - part: 1p_python.qmd
       chapters: 
-        - 1p_1c_funcoes.qmd
+        - 1p_1c_script.qmd
     - part: 2p_quarto.qmd
       chapters: 
         - 2p_1c_create_book.qmd
     - part: 3p_geopandas.qmd
       chapters:
         - 3p_gpd_carregar_arquivos.qmd
-        - 3p_gpd_gerando_mapas.qmd
+        - 3p_gpd_mapas_gerando.qmd
         - 3p_gpd_export_to.qmd
     - references.qmd
 

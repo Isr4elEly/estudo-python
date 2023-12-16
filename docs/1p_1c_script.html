@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estudos em Python - 1&nbsp; FUNÇÕES</title>
+<title>Estudos em Python - 1&nbsp; SCRIPT</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1p_python.html">Códigos em pyhton</a></li><li class="breadcrumb-item"><a href="./1p_1c_funcoes.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">FUNÇÕES</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./1p_python.html">Códigos em pyhton</a></li><li class="breadcrumb-item"><a href="./1p_1c_script.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">SCRIPT</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -151,8 +151,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1p_1c_funcoes.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">FUNÇÕES</span></span></a>
+  <a href="./1p_1c_script.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">SCRIPT</span></span></a>
   </div>
 </li>
       </ul>
@@ -191,7 +191,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3p_gpd_gerando_mapas.html" class="sidebar-item-text sidebar-link">
+  <a href="./3p_gpd_mapas_gerando.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Grando os Mapas</span></span></a>
   </div>
 </li>
@@ -220,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">FUNÇÕES</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">SCRIPT</span></h1>
 </div>
 
 
@@ -235,9 +235,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="função-para-formatar-cpf-e-cnpj" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="função-para-formatar-cpf-e-cnpj"><span class="header-section-number">1.1</span> Função para formatar CPF e CNPJ</h2>
-<p>Classe que tem dois métodos, um para formatar CNPJ e outro pra formatar CPF, geralmente uso quando baixo dados do Sistema Nacional de Cadastro Rural - SNCR onde a tabela exportada necessita de ajustes na formatação antes de utilizar os dados em análises.</p>
+<section id="classe-para-formatar-cpf-e-cnpj" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="classe-para-formatar-cpf-e-cnpj"><span class="header-section-number">1.1</span> Classe para formatar CPF e CNPJ</h2>
+<p>Classe que tem dois métodos, um para formatar CNPJ ou CPF e outro pra formatar o código SNCR do imóvel rural. Geralmente uso quando baixo dados do Sistema Nacional de Cadastro Rural - SNCR, onde a tabela exportada necessita de ajustes na formatação antes de utilizar os dados em análises.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SNCR():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> format_doc(<span class="va">self</span>, doc: <span class="bu">str</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>

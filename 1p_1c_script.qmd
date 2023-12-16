@@ -1,8 +1,8 @@
-# FUNÇÕES
+# SCRIPT
 
 
-## Função para formatar CPF e CNPJ
-Classe que tem dois métodos, um para formatar CNPJ e outro pra formatar CPF, geralmente uso quando baixo dados do Sistema Nacional de Cadastro Rural - SNCR onde a tabela exportada necessita de ajustes na formatação antes de utilizar os dados em análises.
+## Classe para formatar CPF e CNPJ
+Classe que tem dois métodos, um para formatar CNPJ ou CPF e outro pra formatar o código SNCR do imóvel rural. Geralmente uso quando baixo dados do Sistema Nacional de Cadastro Rural - SNCR, onde a tabela exportada necessita de ajustes na formatação antes de utilizar os dados em análises.
 
 ```python
 class SNCR():

@@ -18,4 +18,7 @@ Visando organizar meu códigos e procedimentos que estudo e uso no meu dia-a-dia
    1. Carregando Arquivos
    2. Plotando Mapas
    3. Exportando arquivos
-5. Leflet
+   4. Criando Mapas com mais de uma camada
+   5. ~Listar tabelas dentro do Geopackage~
+5. ~QGIS no códig python~
+6. Leflet

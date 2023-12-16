@@ -90,7 +90,7 @@ format:
 
 ### Texto justificado
 
-colocando o código abaixo no início da página faz com que os testos sejam justificados.
+colocando o código abaixo no início da página faz com que os textos sejam justificados.
 
 ```css
 <div style="text-align: justify">
